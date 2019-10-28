@@ -1,0 +1,1 @@
+These payloads are for the Clas Ohlson Kemp LoadMaster Management Pack from here: https://github.com/ClasOhlson/CO.Kemp

@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_db_mssql_server",
+      "lookup": [],
+      "values": {
+        "version": "Microsoft.SQLServer.DBEngine:::Version",
+        "edition": "Microsoft.SQLServer.DBEngine:::Edition",
+        "install_directory": "Microsoft.SQLServer.DBEngine:::InstallPath",
+        "config_directory": "Microsoft.SQLServer.DBEngine:::MasterDatabaseLocation",
+        "tcp_port": "Microsoft.SQLServer.DBEngine:::TcpPort",
+        "name": "Microsoft.SQLServer.DBEngine:::InstanceID Microsoft.SQLServer.DBEngine:::Version"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Runs on::Runs",
+      "parent": 0,
+      "child": 1
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+These payloads are for the Microsoft SQL Management Packs from Microsoft. The ones for classes starting "MSSQL on Windows" are for the version agnostic SQL management pack, the others are for the older versioned SQL MPs.

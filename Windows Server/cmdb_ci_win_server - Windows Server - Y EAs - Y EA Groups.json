@@ -1,0 +1,52 @@
+{
+    "items": [
+      {
+        "className": "cmdb_ci_win_server",
+        "lookup": [         ],
+        "values": {
+          "ip_address": "Microsoft.Windows.Computer:::IPAddress",
+          "dns_domain": "Microsoft.Windows.Computer:::DomainDnsName",
+          "os_domain": "Microsoft.Windows.Computer:::DomainDnsName",
+          "os_version": "Microsoft.Windows.OperatingSystem:::OSVersion",
+          "cpu_core_count": "Microsoft.Windows.OperatingSystem:::LogicalProcessors",
+          "ram": "Microsoft.Windows.OperatingSystem:::PhysicalMemory",
+          "os": "Microsoft.Windows.OperatingSystem:::OSVersionDisplayName",
+         "virtual": "Microsoft.Windows.Computer:::IsVirtualMachine",
+          "short_description": "SID: Microsoft.Windows.Computer:::ActiveDirectoryObjectSid AD OU:Microsoft.Windows.Computer:::OrganizationalUnit",
+          "host_name": "Microsoft.Windows.Computer:::HostServerName",
+          "name": "Microsoft.Windows.Computer:::NetbiosComputerName",
+          "correlation_id": "Microsoft.Windows.Computer:ObjectId"
+        }
+      },
+ {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplication:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "service_classification": "Application Service"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplicationGroup:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::GroupId",
+        "service_classification": "Technical Service"
+      }
+    }
+    ],
+    "relations": [
+      {
+         "type": "Depends on::Used by",
+         "parent": 1,
+         "child": 2
+      },
+      {
+         "type": "Depends on::Used by",
+         "parent": 2,
+         "child": 0
+      }
+   ]
+}

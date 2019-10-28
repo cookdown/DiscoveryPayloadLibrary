@@ -1,0 +1,1 @@
+These payloads are for the Microsoft Windows Sever Management Packs available from Microsoft 

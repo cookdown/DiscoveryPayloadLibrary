@@ -1,0 +1,1 @@
+These payloads are for the Microsoft Windows Cluster Management Pack from Microsoft

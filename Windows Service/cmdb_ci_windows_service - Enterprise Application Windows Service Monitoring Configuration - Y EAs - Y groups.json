@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_windows_service",
+      "lookup": [],
+      "values": {
+        "path_name": "SquaredUp.EAM.Library.Class.NTServiceMonitor.Configuration:::ServiceName",
+        "display_name": "SquaredUp.EAM.Library.Class.NTServiceMonitor.Configuration::System.Entity::DisplayName",
+        "name": "SquaredUp.EAM.Library.Class.NTServiceMonitor.Configuration:::ServiceName",
+        "correlation_id": "SquaredUp.EAM.Library.Class.NTServiceMonitor.Configuration:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplication:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "service_classification": "Application Service"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplicationGroup:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::GroupId",
+        "service_classification": "Technical Service"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Runs on::Runs",
+      "parent": 1,
+      "child": 0
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 2,
+      "child": 3
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 3,
+      "child": 0
+    }
+  ]
+}
