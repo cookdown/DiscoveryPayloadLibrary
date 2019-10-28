@@ -1,6 +1,6 @@
 # Welcome to the Cookdown Discovery and Mapping Payload Store!
 
-The files in these directories contain the JSON payloads that the [Cookdown Discovery](https://cookdown.com/discovery/) and [Cookdown Mapping](http://cookdown.com/service-mapping/) solutions uses to populate your ServiceNow CMDB with CIs and Services. They are in the correct format for ServiceNow&#39;s Identification and Reconciliation Engine&#39;s public API to accept once the Cookdown Discovery product has parsed them in your environment, replacing the parameterised keys in them with the actual values from each SCOM object in the class they are for.
+The files in these directories contain the JSON payloads that the [Cookdown Discovery](https://cookdown.com/discovery/) and [Cookdown Mapping](https://cookdown.com/service-mapping/) solutions uses to populate your ServiceNow CMDB with CIs and Services. They are in the correct format for ServiceNow&#39;s Identification and Reconciliation Engine&#39;s public API to accept once the Cookdown Discovery product has parsed them in your environment, replacing the parameterised keys in them with the actual values from each SCOM object in the class they are for.
 
 Before getting going, please read this document as there are some important points to consider before using them, that if not planned for will result in duplicate CIs or undesired results in your ServiceNow instance
 
@@ -9,6 +9,7 @@ Before getting going, please read this document as there are some important poin
 - Greenfield environments with no other CMDB discovery sources
 - CMDBs that discover from ServiceNow&#39;s own discovery tool – these payloads will result in CIs compatible with those from ServiceNow Discovery. They have been built around compatibility with ServiceNow&#39;s own discovery tool
 - ServiceNow&#39;s out of the box Identification and Reconciliation rules – if a payload requires any Identification and Reconciliation rule changes from default it will be noted in the readme within each file or within this readme
+- Getting inspiration for your own custom payloads
 
 # What these payloads are not good for
 
