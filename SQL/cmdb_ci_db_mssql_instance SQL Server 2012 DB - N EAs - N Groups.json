@@ -1,0 +1,43 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_db_mssql_database",
+      "lookup": [],
+      "values": {
+        "short_description": "Collation: Microsoft.SQLServer.2012.Database:::Collation Recovery Model: Microsoft.SQLServer.2012.Database:::RecoveryModel Updateability: Microsoft.SQLServer.2012.Database:::Updateability",
+        "name": "Microsoft.SQLServer.2012.Database:::DatabaseName",
+        "database": "Microsoft.SQLServer.2012.Database:::DatabaseName",
+        "sys_class_name": "cmdb_ci_db_mssql_database",
+        "correlation_id": "Microsoft.SQLServer.2012.Database:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_db_mssql_instance",
+      "lookup": [],
+      "values": {
+        "instance_name": "Microsoft.SQLServer.2012.Database::Microsoft.SQLServer.2012.ServerRole::InstanceName",
+        "sys_class_name": "cmdb_ci_db_mssql_instance",
+        "correlation_id": "Microsoft.SQLServer.2012.DBEngine:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName",
+        "correlation_id": "Microsoft.Windows.Computer:ObjectId"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Contains::Contained by",
+      "parent": 1,
+      "child": 0
+    },
+    {
+      "type": "Runs on::Runs",
+      "parent": 1,
+      "child": 2
+    }
+  ]
+}

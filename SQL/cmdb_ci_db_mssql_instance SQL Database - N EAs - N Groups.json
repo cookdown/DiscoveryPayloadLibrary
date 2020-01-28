@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_db_mssql_database",
+      "lookup": [],
+      "values": {
+        "short_description": "Collation: Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::Collation Recovery Model: Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::RecoveryModel Updateability: Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::Updateability",
+        "name": "Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::DatabaseName",
+        "database": "Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::DatabaseName",
+        "sys_class_name": "cmdb_ci_db_mssql_database",
+        "correlation_id": "Microsoft.SQLServer.Windows.Database:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_db_mssql_instance",
+      "lookup": [],
+      "values": {
+        "instance_name": "Microsoft.SQLServer.Windows.DBEngine::Microsoft.SQLServer.Core.DBEngine::InstanceName",
+        "sys_class_name": "cmdb_ci_db_mssql_instance",
+        "correlation_id": "Microsoft.SQLServer.Windows.DBEngine:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName",
+        "u_scom_object_id": "Microsoft.Windows.Computer:ObjectId",
+        "u_scom_company_id": "Microsoft.Windows.Computer::DTT.Windows.Server.Lite::GlbMemberFirmID",
+        "u_scom_owner": "Microsoft.Windows.Computer::DTT.Windows.Server.Lite::GlbEngagementLead"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Contains::Contained by",
+      "parent": 1,
+      "child": 0
+    },
+    {
+      "type": "Runs on::Runs",
+      "parent": 1,
+      "child": 2
+    }
+  ]
+}
