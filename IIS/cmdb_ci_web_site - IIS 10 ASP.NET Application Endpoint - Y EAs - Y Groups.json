@@ -4,7 +4,7 @@
       "className": "cmdb_ci_web_site",
       "lookup": [],
       "values": {
-        "tcp_port": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::ServerBindings,Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::SecureBindings",
+        "tcp_port": "[REGEX(Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::ServerBindings,'\\d+')], [REGEX(Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::SecureBindings,'\\d+')]",
         "short_description": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Description",
         "name": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
         "config_directory": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Path",
