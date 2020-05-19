@@ -39,8 +39,8 @@
   "relations": [
     {
       "type": "Runs on::Runs",
-      "parent": 1,
-      "child": 0
+      "parent": 0,
+      "child": 1
     },
     {
       "type": "Depends on::Used by",
