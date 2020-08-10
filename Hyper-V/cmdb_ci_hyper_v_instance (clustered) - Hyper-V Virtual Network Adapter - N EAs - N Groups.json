@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_hyper_v_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Cluster:::Name",
+        "os_version": "Microsoft.Windows.Cluster:::OSVersion"
+      }
+    },
+    {
+      "className": "cmdb_ci_hyper_v_instance",
+      "lookup": [],
+      "values": {
+        "correlation_id": "Microsoft.Windows.HyperV.VirtualMachine:ObjectId",
+        "cpus": "Microsoft.Windows.Computer:::PhysicalProcessors",
+        "name": "Microsoft.Windows.HyperV.VirtualMachine:::VirtualMachineName",
+        "object_id": "[REGEX(Microsoft.Windows.HyperV.VirtualMachine:::VirtualMachineId,'[a-zA-Z0-9-]+')]"
+      }
+    },
+    {
+      "className": "cmdb_ci_hyper_v_network",
+      "lookup": [],
+      "values": {
+        "correlation_id": "Microsoft.Windows.HyperV.VirtualNetworkAdapter:ObjectId",
+        "name": "Microsoft.Windows.HyperV.VirtualNetworkAdapter:::ConnectedNetworkName",
+        "object_id": "Microsoft.Windows.HyperV.VirtualNetworkAdapter:::ConnectedNetworkId"
+      }
+    },
+    {
+      "className": "cmdb_ci_hyper_v_server",
+      "lookup": [],
+      "values": {
+        "correlation_id": "Microsoft.Windows.HyperV.ServerRole:ObjectId",
+        "name": "[REGEX(Microsoft.Windows.HyperV.ServerRole:::ServerId,'[a-zA-Z0-9-]+')]"
+      }
+    },
+    {
+      "className": "cmdb_ci_cluster",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Cluster:::Name",
+        "correlation_id": "Microsoft.Windows.HyperV.ServerRole:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "[REGEX(Microsoft.Windows.HyperV.VirtualMachine:::ComputerName,'[a-zA-Z0-9-]+')]"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Registered on::Has registered",
+      "parent": 1,
+      "child": 0
+    },
+    {
+      "type": "Connected by::Connects",
+      "parent": 1,
+      "child": 2
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 0,
+      "child": 3
+    },
+    {
+      "type": "Provides::Provided by",
+      "parent": 2,
+      "child": 3
+    },
+    {
+      "type": "Members::Member of",
+      "parent": 4,
+      "child": 3
+    },
+    {
+      "type": "Members::Member of",
+      "parent": 4,
+      "child": 0
+    },
+    {
+      "type": "Virtualized by::Virtualizes",
+      "parent": 5,
+      "child": 1
+    }
+  ]
+}
