@@ -1,0 +1,21 @@
+{
+    "items": [
+      {
+        "className": "cmdb_ci_linux_server",
+        "lookup": [],
+        "values": {
+          "correlation_id": "Microsoft.Unix.Computer:ObjectId",
+          "cpu_core_count": "Microsoft.Unix.Computer:::LogicalProcessors",
+          "cpu_count": "Microsoft.Unix.Computer:::PhysicalProcessors",
+          "dns_domain": "[REGEX(Microsoft.Unix.Computer:::DNSName,'(?<=\\.)[\\w-\\.]+')]",
+          "fqdn": "Microsoft.Unix.Computer:::DNSName",
+          "ip_address": "Microsoft.Unix.Computer:::IPAddress",
+          "os": "GNU/Linux",
+          "os_version": "Microsoft.Linux.Universal.OperatingSystem::Microsoft.Unix.OperatingSystem::OSVersionDisplayName",
+          "short_description": "SSH Port: Microsoft.Unix.Computer:::SSHPort",
+          "name": "[REGEX(Microsoft.Unix.Computer:::PrincipalName,'[\\w-]+')]"
+        }
+      }
+    ],
+    "relations": []
+}
