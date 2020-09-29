@@ -10,11 +10,11 @@
           "config_directory": "Microsoft.SQLServer.DBEngine:::MasterDatabaseLocation",
           "tcp_port": "Microsoft.SQLServer.DBEngine:::TcpPort",
           "install_directory": "Microsoft.SQLServer.DBEngine:::InstallPath",
-          "name": "Microsoft.SQLServer.DBEngine::Microsoft.SQLServer.ServerRole::InstanceName",
+          "name": "Microsoft.SQLServer.DBEngine::Microsoft.SQLServer.ServerRole::InstanceName@Microsoft.Windows.Computer:::NetbiosComputerName",
           "dns_domain": "Microsoft.Windows.Computer:::DomainDnsName",
           "running_process_command": "Microsoft.SQLServer.DBEngine:::ServiceClusterName",
           "is_clustered": "Microsoft.SQLServer.DBEngine:::Cluster",
-          "instance_name": "Microsoft.SQLServer.DBEngine::Microsoft.SQLServer.ServerRole::InstanceName@Microsoft.Windows.Computer:::NetbiosComputerName",
+          "instance_name": "Microsoft.SQLServer.DBEngine::Microsoft.SQLServer.ServerRole::InstanceName",
           "sys_class_name": "cmdb_ci_db_mssql_instance",
           "correlation_id": "Microsoft.SQLServer.DBEngine:ObjectId"
         }
