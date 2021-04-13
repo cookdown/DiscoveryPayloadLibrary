@@ -7,6 +7,7 @@
         "ip_address": "Microsoft.Windows.Computer:::IPAddress",
         "dns_domain": "Microsoft.Windows.Computer:::DomainDnsName",
         "os_domain": "Microsoft.Windows.Computer:::DomainDnsName",
+        "fqdn": "Microsoft.Windows.Computer:::PrincipalName",
         "os_version": "Microsoft.Windows.OperatingSystem:::OSVersion",
         "cpu_core_count": "Microsoft.Windows.OperatingSystem:::LogicalProcessors",
         "ram": "Microsoft.Windows.OperatingSystem:::PhysicalMemory",
