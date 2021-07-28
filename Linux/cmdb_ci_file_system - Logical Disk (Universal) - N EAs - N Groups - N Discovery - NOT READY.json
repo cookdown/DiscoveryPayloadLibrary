@@ -1,33 +1,34 @@
 {
-  "items": [
-    {
-      "className": "cmdb_ci_file_system",
-      "internal_id": "file_system",
-      "lookup": [],
-      "values": {
-        "correlation_id": "Microsoft.Linux.Universal.LogicalDisk:ObjectId",
-        "server_name": "[REGEX(Microsoft.Unix.Computer:::PrincipalName,'[\\w-]+')]",
-        "size_bytes": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDisk::Size",
-        "storage_type": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDisk::FileSystem",
-        "file_system": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDisk::FileSystem",
-        "mount_point": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDevice::DeviceName",
-        "name": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDevice::DeviceName"
-      }
-    },
-    {
-      "className": "cmdb_ci_linux_server",
-      "internal_id": "linux_server",
-      "lookup": [],
-      "values": {
-        "name": "[REGEX(Microsoft.Unix.Computer:::PrincipalName,'[\\w-]+')]"
-      }
-    }
-  ],
-  "relations": [
-    {
-      "type": "Contains::Contained by",
-      "parent": "1",
-      "child": "0"
-    }
-  ]
+    "items": [{
+            "className": "cmdb_ci_file_system",
+            "internal_id": "file_system",
+            "lookup": [],
+            "values": {
+                "correlation_id": "Microsoft.Linux.Universal.LogicalDisk:ObjectId",
+                "server_name": "[REGEX(Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.Computer::PrincipalName,'[\\w-]+')]",
+                "size_bytes": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDisk::Size",
+                "file_system": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDisk::FileSystem",
+                "name": "Microsoft.Linux.Universal.LogicalDisk::Microsoft.Unix.LogicalDevice::DeviceName"
+            }
+        }, {
+            "className": "cmdb_ci_linux_server",
+            "internal_id": "linux_server",
+            "lookup": [],
+            "values": {
+                "name": "[REGEX(Microsoft.Unix.Computer:::PrincipalName,'[\\w-]+')]"
+            }
+        }
+    ],
+    "relations": [{
+            "type": "Contains::Contained by",
+            "parent": 1,
+            "child": 0
+        }
+    ],
+    "referenceItems": [{
+            "referenced": "linux_server",
+            "referencedBy": "file_system",
+            "referenceField": "computer"
+        }
+    ]
 }
