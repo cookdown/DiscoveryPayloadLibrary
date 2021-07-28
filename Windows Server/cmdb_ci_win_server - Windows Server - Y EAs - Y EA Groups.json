@@ -9,7 +9,7 @@
           "os_domain": "Microsoft.Windows.Computer:::DomainDnsName",
           "os_version": "Microsoft.Windows.OperatingSystem:::OSVersion",
           "cpu_core_count": "Microsoft.Windows.OperatingSystem:::LogicalProcessors",
-          "ram": "Microsoft.Windows.OperatingSystem:::PhysicalMemory",
+        "ram": "[REGEX(Microsoft.Windows.OperatingSystem:::PhysicalMemory,'[0-9]*(?=[0-9]{3}$)')]",
           "os": "Microsoft.Windows.OperatingSystem:::OSVersionDisplayName",
          "virtual": "Microsoft.Windows.Computer:::IsVirtualMachine",
           "short_description": "SID: Microsoft.Windows.Computer:::ActiveDirectoryObjectSid AD OU:Microsoft.Windows.Computer:::OrganizationalUnit",
