@@ -1,63 +1,76 @@
 {
-  "items": [{
-          "className": "cmdb_ci_network_adapter",
-          "internal_id": "windows_nic",
-          "lookup": [],
-          "values": {
-              "correlation_id": "Microsoft.Windows.Server.10.0.NetworkAdapter:ObjectId",
-              "dhcp_enabled": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::DHCPEnabled",
-              "dns_domain": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::DNSDomain",
-              "ip_address": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPAddress",
-              "ip_default_gateway": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.NetworkAdapter::DefaultIPGateway",
-              "mac_address": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::MACAddress",
-              "mac_manufacturer": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::Manufacturer",
-              "netmask": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPSubnet",
-              "short_description": "NIC Manufacturer: Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::ManufacturerService Name: Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::ServiceName IP issued from DHCP Server: Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::DHCPServer",
-              "name": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.LogicalDevice::Name"
-          }
-      }, {
-          "className": "cmdb_ci_win_server",
-          "internal_id": "windows_server",
-          "lookup": [],
-          "values": {
-              "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
-          }
-      }, {
-          "className": "cmdb_ci_ip_address",
-          "internal_id": "ip_addr",
-          "lookup": [],
-          "values": {
-              "ip_version": "4",
-              "ip_address": "[REGEX(Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPAddress,'([0-9]{1,3}\\.){3}[0-9]{1,3}')]",
-              "netmask": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPSubnet"
-          }
-      }, {
-          "className": "cmdb_ci_dns_name",
-          "lookup": [],
-          "values": {
-              "ip_address": "[REGEX(Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPAddress,'([0-9]{1,3}\\.){3}[0-9]{1,3}')]",
-              "name": "Microsoft.Windows.Computer:::DNSName"
-          }
+  "items": [
+    {
+      "className": "cmdb_ci_network_adapter",
+      "internal_id": "windows_nic",
+      "lookup": [],
+      "values": {
+        "correlation_id": "Microsoft.Windows.Server.10.0.NetworkAdapter:ObjectId",
+        "dhcp_enabled": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::DHCPEnabled",
+        "dns_domain": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::DNSDomain",
+        "ip_address": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPAddress",
+        "ip_default_gateway": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.NetworkAdapter::DefaultIPGateway",
+        "mac_address": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::MACAddress",
+        "mac_manufacturer": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::Manufacturer",
+        "netmask": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPSubnet",
+        "short_description": "NIC Manufacturer: Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::ManufacturerService Name: Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::ServiceName IP issued from DHCP Server: Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::DHCPServer",
+        "name": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.LogicalDevice::Name"
       }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "internal_id": "windows_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+      }
+    },
+    {
+      "className": "cmdb_ci_ip_address",
+      "internal_id": "ip_addr",
+      "lookup": [],
+      "values": {
+        "ip_version": "4",
+        "ip_address": "[REGEX(Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPAddress,'([0-9]{1,3}\\.){3}[0-9]{1,3}')]",
+        "netmask": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPSubnet"
+      }
+    },
+    {
+      "className": "cmdb_ci_dns_name",
+	  "internal_id": "dns_name",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::DNSName"
+      }
+    }
   ],
-  "relations": [{
-          "type": "Owns::Owned by",
-          "parent": 1,
-          "child": 0
-      }, {
-          "type": "Owns::Owned by",
-          "parent": 1,
-          "child": 2
-      }
+  "relations": [
+    {
+      "type": "Owns::Owned by",
+      "parent": 1,
+      "child": 0
+    },
+    {
+      "type": "Owns::Owned by",
+      "parent": 1,
+      "child": 2
+    }
   ],
-  "referenceItems": [{
-          "referenced": "windows_server",
-          "referencedBy": "windows_nic",
-          "referenceField": "cmdb_ci"
-      }, {
-          "referenced": "windows_nic",
-          "referencedBy": "ip_addr",
-          "referenceField": "nic"
-      }
+  "referenceItems": [
+    {
+      "referenced": "windows_server",
+      "referencedBy": "windows_nic",
+      "referenceField": "cmdb_ci"
+    },
+    {
+      "referenced": "windows_nic",
+      "referencedBy": "ip_addr",
+      "referenceField": "nic"
+    },
+	{
+	      "referenced": "ip_addr",
+      "referencedBy": "dns_name",
+      "referenceField": "ip_address"
+	}
   ]
 }
