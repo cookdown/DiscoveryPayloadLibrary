@@ -9,7 +9,8 @@
         "file_system": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.Server.LogicalDisk::FileSystem",
         "media_type": "fixed",
         "label": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.LogicalDisk::VolumeName",
-        "name": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.LogicalDevice::Name"
+        "name": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.LogicalDevice::Name",
+        "correlation_id": "Microsoft.Windows.Server.10.0.LogicalDisk:ObjectId"
       }
     },
     {
