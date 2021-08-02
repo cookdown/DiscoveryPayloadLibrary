@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_file_system",
+      "internal_id": "file_system",
+      "lookup": [],
+      "values": {
+        "size_bytes": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.Server.LogicalDisk::Size",
+        "file_system": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.Server.LogicalDisk::FileSystem",
+        "media_type": "fixed",
+        "label": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.LogicalDisk::VolumeName",
+        "name": "Microsoft.Windows.Server.10.0.LogicalDisk::Microsoft.Windows.LogicalDevice::Name"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "internal_id": "windows_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Contains::Contained by",
+      "parent": 1,
+      "child": 0
+    }
+  ],
+  "referenceItems": [
+    {
+      "referenced": "windows_server",
+      "referencedBy": "file_system",
+      "referenceField": "computer"
+    }
+  ]
+}
