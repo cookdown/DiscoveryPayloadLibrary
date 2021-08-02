@@ -1,0 +1,47 @@
+{
+   "items": [
+      {
+         "className": "cmdb_ci_storage_device",
+         "internal_id": "disk_system",
+         "lookup": [],
+         "values": {
+            "correlation_id": "Microsoft.Windows.Server.10.0.PhysicalDisk:ObjectId",
+            "name": "Microsoft.Windows.Server.10.0.PhysicalDisk::System.Entity::DisplayName",
+            "device_bus_id": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::SCSIBus",
+            "device_target_id": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::SCSITargetID",
+            "device_host_id": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::SCSIPort",
+            "device_lun": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::SCSILogicalUnit",
+            "device_interface": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::InterfaceType",
+            "manufacturer": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::Manufacturer",
+            "model_id": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::Model",
+            "monitor": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::PerfmonInstance",
+            "size_bytes": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::Size",
+            "storage_type": "disk",
+            "short_description": "Caption: Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.Server.PhysicalDisk::Caption,  Description: Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.LogicalDevice::Description",
+            "device_id": "Microsoft.Windows.Server.10.0.PhysicalDisk::Microsoft.Windows.LogicalDevice::DeviceID"
+         }
+      },
+      {
+         "className": "cmdb_ci_win_server",
+         "internal_id": "windows_server",
+         "lookup": [],
+         "values": {
+            "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+         }
+      }
+   ],
+   "relations": [
+      {
+         "type": "Contains::Contained by",
+         "parent": 1,
+         "child": 0
+      }
+     ],
+     "referenceItems": [
+    {
+      "referenced": "windows_server",
+      "referencedBy": "disk_system",
+      "referenceField": "computer"
+    }
+  ]
+}
