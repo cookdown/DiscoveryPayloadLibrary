@@ -1,0 +1,16 @@
+{
+    "items": [
+       {
+          "className": "cmdb_ci_win_server",
+          "lookup": [],
+          "values": {
+             "cpu_manufacturer": "Microsoft.Windows.Server.10.0.Processor::Microsoft.Windows.Server.Processor::Manufacturer",
+             "cpu_name": "Microsoft.Windows.Server.10.0.Processor::Microsoft.Windows.LogicalDevice::Name",
+             "cpu_speed": "Microsoft.Windows.Server.10.0.Processor::Microsoft.Windows.Server.Processor::Speed",
+             "cpu_type": "Microsoft.Windows.Server.10.0.Processor::Microsoft.Windows.Processor::Family",
+             "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+          }
+       }
+    ],
+    "relations": []
+ }
