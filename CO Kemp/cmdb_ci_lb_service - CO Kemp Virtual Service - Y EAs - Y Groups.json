@@ -25,8 +25,8 @@
       "className": "cmdb_ci_service_discovered",
       "lookup": [],
       "values": {
-        "name": "EnterpriseApplication:::DisplayName",
-        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "name": "DistributedApplication:::DisplayName",
+        "correlation_id": "DistributedApplication:::Id",
         "service_classification": "Application Service"
       }
     },
@@ -38,7 +38,7 @@
         "correlation_id": "EnterpriseApplicationGroup:::GroupId",
         "service_classification": "Technical Service"
       }
-}
+    }
   ],
   "relations": [
     {

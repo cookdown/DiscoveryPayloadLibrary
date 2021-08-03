@@ -6,7 +6,7 @@
       "values": {
         "tcp_port": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::ServerBindings,Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::SecureBindings",
         "short_description": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Description",
-        "name": ""Microsoft.Windows.InternetInformationServices.2008.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
+        "name": "Microsoft.Windows.InternetInformationServices.2008.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
         "config_directory": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Path",
         "correlation_id": "Microsoft.Windows.InternetInformationServices.2008.WebSite:ObjectId"
       }
@@ -26,14 +26,14 @@
       "lookup": [],
       "values": {
         "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
-      }   
+      }
     },
  {
       "className": "cmdb_ci_service_discovered",
       "lookup": [],
       "values": {
-        "name": "EnterpriseApplication:::DisplayName",
-        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "name": "DistributedApplication:::DisplayName",
+        "correlation_id": "DistributedApplication:::Id",
         "service_classification": "Application Service"
       }
     }
