@@ -32,7 +32,7 @@
         "values": {
           "ip_version": "6",
           "ip_address": "[REGEX(Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPAddress,'^[0-9a-f:]{18,39}[%0-9a-f]{0,3}$')]",
-          "netmask": "64"
+          "netmask": "Microsoft.Windows.Server.10.0.NetworkAdapter::Microsoft.Windows.Server.NetworkAdapter::IPSubnet"
         }
       }
     ],
