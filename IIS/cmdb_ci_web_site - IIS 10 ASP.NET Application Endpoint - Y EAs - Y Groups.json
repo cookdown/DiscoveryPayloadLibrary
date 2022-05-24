@@ -8,7 +8,7 @@
         "short_description": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Description",
         "name": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
         "config_directory": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Path",
-     "correlation_id": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint:ObjectId, Microsoft.Windows.InternetInformationServices.10.0.WebSite:ObjectId"
+        "correlation_id": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint:ObjectId, Microsoft.Windows.InternetInformationServices.10.0.WebSite:ObjectId"
       }
 },
 {
