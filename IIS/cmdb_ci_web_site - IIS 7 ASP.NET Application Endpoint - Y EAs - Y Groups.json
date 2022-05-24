@@ -6,7 +6,7 @@
       "values": {
         "tcp_port": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::ServerBindings,Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::SecureBindings",
         "short_description": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Description",
-        "name": ""Microsoft.Windows.InternetInformationServices.2008.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
+        "name": "Microsoft.Windows.InternetInformationServices.2008.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
         "config_directory": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Path",
         "correlation_id": "Microsoft.Windows.InternetInformationServices.2008.WebSite:ObjectId"
       }
