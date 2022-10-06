@@ -2,17 +2,13 @@
     "items": [
       {
         "className": "cmdb_ci_win_server",
-        "lookup": [         ],
+        "lookup": [],
         "values": {
           "ip_address": "Microsoft.Windows.Computer:::IPAddress",
           "dns_domain": "Microsoft.Windows.Computer:::DomainDnsName",
           "os_domain": "Microsoft.Windows.Computer:::DomainDnsName",
-          "os_version": "Microsoft.Windows.OperatingSystem:::OSVersion",
-          "cpu_core_count": "Microsoft.Windows.OperatingSystem:::LogicalProcessors",
-            "fqdn": "Microsoft.Windows.Computer:::PrincipalName",
-        "ram": "[REGEX(Microsoft.Windows.OperatingSystem:::PhysicalMemory,'[0-9]*(?=[0-9]{3}$)')]",
-          "os": "Microsoft.Windows.OperatingSystem:::OSVersionDisplayName",
-         "virtual": "Microsoft.Windows.Computer:::IsVirtualMachine",
+          "fqdn": "Microsoft.Windows.Computer:::PrincipalName",
+          "virtual": "Microsoft.Windows.Computer:::IsVirtualMachine",
           "short_description": "SID: Microsoft.Windows.Computer:::ActiveDirectoryObjectSid AD OU:Microsoft.Windows.Computer:::OrganizationalUnit",
           "host_name": "Microsoft.Windows.Computer:::HostServerName",
           "name": "Microsoft.Windows.Computer:::NetbiosComputerName",
@@ -24,7 +20,7 @@
       "lookup": [],
       "values": {
         "name": "EnterpriseApplication:::DisplayName",
-        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "correlation_id": "EnterpriseApplication:::Id",
         "service_classification": "Application Service"
       }
     },
@@ -33,7 +29,7 @@
       "lookup": [],
       "values": {
         "name": "EnterpriseApplicationGroup:::DisplayName",
-        "correlation_id": "EnterpriseApplicationGroup:::GroupId",
+        "correlation_id": "EnterpriseApplicationGroup:::Id",
         "service_classification": "Technical Service"
       }
     }
