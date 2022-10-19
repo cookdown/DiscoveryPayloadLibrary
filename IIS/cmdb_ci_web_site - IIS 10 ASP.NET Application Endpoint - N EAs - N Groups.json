@@ -2,17 +2,19 @@
   "items": [
     {
       "className": "cmdb_ci_web_site",
+      "internal_id": "web_application",
       "lookup": [],
       "values": {
         "tcp_port": "[REGEX(Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::ServerBindings,'\\d+')], [REGEX(Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::SecureBindings,'\\d+')]",
         "short_description": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Description",
         "name": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint::System.Entity::DisplayName",
         "config_directory": "Microsoft.Windows.InternetInformationServices.10.0.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Path",
-     "correlation_id": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint:ObjectId, Microsoft.Windows.InternetInformationServices.10.0.WebSite:ObjectId"
+        "correlation_id": "Microsoft.Windows.InternetInformationServices.10.0.AspNetWebApplicationEndpoint:ObjectId, Microsoft.Windows.InternetInformationServices.10.0.WebSite:ObjectId"
       }
-},
-{
+    },
+    {
       "className": "cmdb_ci_microsoft_iis_web_server",
+      "internal_id": "web_server",
       "lookup": [],
       "values": {
         "version": "Microsoft.Windows.InternetInformationServices.10.0.ServerRole::Microsoft.Windows.InternetInformationServices.ServerRole::MajorVersion.Microsoft.Windows.InternetInformationServices.10.0.ServerRole::Microsoft.Windows.InternetInformationServices.ServerRole::MinorVersion",
@@ -27,20 +29,26 @@
       "values": {
         "name": "Microsoft.Windows.Computer:::NetbiosComputerName",
         "correlation_id": "Microsoft.Windows.Computer:ObjectId"
-      }   
+      }
     }
-    
+  ],
+  "referenceItems": [
+    {
+      "referenced": "web_server",
+      "referencedBy": "web_application",
+      "referenceField": "web_server"
+    }
   ],
   "relations": [
     {
-      "type": "Hosted on::Hosts",
+      "child": 1,
       "parent": 0,
-      "child": 1
+      "type": "Hosted on::Hosts"
     },
     {
-      "type": "Runs on::Runs",
+      "child": 2,
       "parent": 1,
-      "child": 2
+      "type": "Runs on::Runs"
     }
   ]
 }
