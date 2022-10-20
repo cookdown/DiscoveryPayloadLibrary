@@ -15,8 +15,9 @@
       "className": "cmdb_ci_db_mssql_instance",
       "lookup": [],
       "values": {
-        "instance_name": "Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.DBEngine::InstanceName@Microsoft.Windows.Computer:::NetbiosComputerName",
-        "sys_class_name": "cmdb_ci_db_mssql_instance"
+        "instance_name": "Microsoft.SQLServer.Windows.DBEngine::Microsoft.SQLServer.Core.DBEngine::InstanceName",
+        "sys_class_name": "cmdb_ci_db_mssql_instance",
+        "name": "Microsoft.SQLServer.Windows.DBEngine::Microsoft.SQLServer.Core.DBEngine::InstanceName@Microsoft.Windows.Computer:::NetbiosComputerName"
       }
     },
     {
