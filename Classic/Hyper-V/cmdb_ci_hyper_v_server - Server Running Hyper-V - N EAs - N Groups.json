@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_hyper_v_server",
+      "lookup": [],
+      "values": {
+        "os_domain": "Microsoft.Windows.Computer:::DomainDnsName",
+        "os": "Microsoft.Windows.Computer::LW.Base.Microsoft.Windows.Server.BaseOS.Category::GuestOS",
+        "dns_domain": "Microsoft.Windows.Computer:::DomainDnsName",
+        "cpu_core_count": "Microsoft.Windows.Computer:::LogicalProcessors",
+        "cpu_count": "Microsoft.Windows.Computer:::PhysicalProcessors",
+        "name": "Microsoft.Windows.HyperV.ServerRole:::ServerName",
+        "correlation_id": "Microsoft.Windows.HyperV.ServerRole:ObjectId"
+
+      }
+    },
+   {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName",
+        "correlation_id": "Microsoft.Windows.Computer:ObjectId"
+      }
+    }
+  ],
+  "relations": [
+
+{
+      "type": "Runs on::Runs",
+      "parent": 0,
+      "child": 1
+    }
+]
+}

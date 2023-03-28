@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_ad_controller",
+      "lookup": [],
+      "values": {
+        "dns_domain": "Microsoft.Windows.Computer:::DomainDnsName",
+        "forest_name": "Microsoft.Windows.Computer:::ForestDnsName",
+        "name": "Microsoft.Windows.Server.2012.R2.AD.DomainControllerRole::Microsoft.Windows.Server.AD.Library.DomainControllerRole::Name",
+        "fqdn": "Microsoft.Windows.Computer:::PrincipalName",
+        "ip_address": "Microsoft.Windows.Computer:::IPAddress",
+        "short_description": "Read Only DC: Microsoft.Windows.Server.2012.R2.AD.DomainControllerRole:::IsRODC Global Catalogue Server: Microsoft.Windows.Server.2012.R2.AD.DomainControllerRole::Microsoft.Windows.Server.AD.Library.DomainControllerRole::IsGlobalCatalogServer",
+        "domain_controller_name": "Microsoft.Windows.Computer:::PrincipalName",
+        "domain_name": "Microsoft.Windows.Computer:::DomainDnsName",
+        "sys_class_name": "cmdb_ci_ad_controller",
+        "correlation_id": "Microsoft.Windows.Server.2012.R2.AD.DomainControllerRole:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Server.2012.R2.AD.DomainControllerRole::Microsoft.Windows.Server.AD.Library.DomainControllerRole::Name",
+        "correlation_id": "Microsoft.Windows.Computer:ObjectId"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Runs on::Runs",
+      "parent": 0,
+      "child": 1
+    }
+  ]
+}

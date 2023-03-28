@@ -1,0 +1,72 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_web_site",
+      "lookup": [],
+      "values": {
+        "tcp_port": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::ServerBindings,Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::SecureBindings",
+        "short_description": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Description",
+        "name": "Microsoft.Windows.InternetInformationServices.2008.WebSite::System.Entity::DisplayName",
+        "config_directory": "Microsoft.Windows.InternetInformationServices.2008.WebSite::Microsoft.Windows.InternetInformationServices.WebSite::Path",
+        "correlation_id": "Microsoft.Windows.InternetInformationServices.2008.WebSite:ObjectId"
+      }
+},
+{
+      "className": "cmdb_ci_microsoft_iis_web_server",
+      "lookup": [],
+      "values": {
+        "version": "Microsoft.Windows.InternetInformationServices.2008.ServerRole::Microsoft.Windows.InternetInformationServices.ServerRole::MajorVersion.Microsoft.Windows.InternetInformationServices.2008.ServerRole::Microsoft.Windows.InternetInformationServices.ServerRole::MinorVersion",
+        "sys_class_name": "cmdb_ci_microsoft_iis_web_server",
+        "name": "Microsoft.Windows.InternetInformationServices.2008.WebServer::System.Entity::DisplayName@Microsoft.Windows.Computer:::NetbiosComputerName",
+        "correlation_id": "Microsoft.Windows.InternetInformationServices.2008.WebServer:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+      }   
+    },
+ {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplication:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "service_classification": "Application Service"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplicationGroup:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::GroupId",
+        "service_classification": "Technical Service"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Hosted on::Hosts",
+      "parent": 0,
+      "child": 1
+    },
+    {
+      "type": "Runs on::Runs",
+      "parent": 1,
+      "child": 2
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 3,
+      "child": 4
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 4,
+      "child": 0
+    }
+  ]
+}
