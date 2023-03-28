@@ -1,0 +1,26 @@
+{% assign memory_mb = Microsoft-Windows-OperatingSystem_PhysicalMemory | divided_by: 1024 %}
+{%- if Microsoft-Windows-OperatingSystem_PhysicalMemory | modulo: 1024 != 0 %}{% assign memory_mb = memory_mb | plus: 1 %}{% endif -%}
+{
+  "items": [
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "ip_address": "{{Microsoft-Windows-Computer_IPAddress}}",
+        "dns_domain": "{{Microsoft-Windows-Computer_DomainDnsName}}",
+        "os_domain": "{{Microsoft-Windows-Computer_DomainDnsName}}",
+        "fqdn": "{{Microsoft-Windows-Computer_PrincipalName}}",
+        "os_version": "{{Microsoft-Windows-OperatingSystem_OSVersion}}",
+        "cpu_core_count": "{{Microsoft-Windows-OperatingSystem_LogicalProcessors}}",
+        "ram": "{{memory_mb}}",
+        "os": "{{Microsoft-Windows-OperatingSystem_OSVersionDisplayName | regex_first_match: 'Windows Server \d{4}( R2)?' }}",
+        "virtual": "{{Microsoft-Windows-Computer_IsVirtualMachine}}",
+        "short_description": "SID: {{Microsoft-Windows-Computer_ActiveDirectoryObjectSid}} AD OU:{{Microsoft-Windows-Computer_OrganizationalUnit}}",
+        "host_name": "{{Microsoft-Windows-Computer_HostServerName}}",
+        "name": "{{Microsoft-Windows-Computer_NetbiosComputerName}}",
+        "correlation_id": "{{Microsoft-Windows-Computer_ObjectId}}"
+      }
+    }
+  ],
+  "relations": []
+}
