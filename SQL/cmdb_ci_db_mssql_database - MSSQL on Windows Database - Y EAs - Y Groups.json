@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_db_mssql_database",
+      "lookup": [],
+      "values": {
+        "short_description": "Collation: Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::Collation Recovery Model: Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::RecoveryModel Udatability: Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::Updateability",
+        "name": "Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::DatabaseName",
+        "database": "Microsoft.SQLServer.Windows.Database::Microsoft.SQLServer.Core.Database::DatabaseName",
+        "sys_class_name": "cmdb_ci_db_mssql_database",
+"correlation_id": "Microsoft.SQLServer.Windows.Database:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_db_mssql_instance",
+      "lookup": [],
+      "values": {
+        "instance_name": "Microsoft.SQLServer.Windows.DBEngine::Microsoft.SQLServer.Core.DBEngine::InstanceName",
+        "sys_class_name": "cmdb_ci_db_mssql_instance",
+        "name": "Microsoft.SQLServer.Windows.DBEngine::Microsoft.SQLServer.Core.DBEngine::InstanceName@Microsoft.Windows.Computer:::NetbiosComputerName"
+      }
+    },
+    {
+      "className": "cmdb_ci_win_server",
+      "lookup": [],
+      "values": {
+        "name": "Microsoft.Windows.Computer:::NetbiosComputerName"
+      }
+    },
+{
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplication:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "service_classification": "Application Service"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplicationGroup:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::GroupId",
+        "service_classification": "Technical Service"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "Contains::Contained by",
+      "parent": 1,
+      "child": 0
+    },
+    {
+      "type": "Runs on::Runs",
+      "parent": 1,
+      "child": 2
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 3,
+      "child": 4
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 4,
+      "child": 0
+    }
+  ]
+}

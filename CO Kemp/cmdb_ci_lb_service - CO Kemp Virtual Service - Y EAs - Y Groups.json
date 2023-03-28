@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "className": "cmdb_ci_lb_service",
+      "lookup": [],
+      "values": {
+        "listener_protocol": "CO.Kemp.VirtualService:::Protocol",
+        "short_description": "QoS: CO.Kemp.VirtualService:::QoS Layer: CO.Kemp.VirtualService:::Layer Check URL: CO.Kemp.VirtualService:::CheckType://CO.Kemp.VirtualService:::VSAddressCO.Kemp.VirtualService:::CheckUrl",
+        "ip_address": "CO.Kemp.VirtualService:::VSAddress",
+        "name": "CO.Kemp.VirtualService::System.Entity::DisplayName",
+        "port": "CO.Kemp.VirtualService:::Port",
+        "correlation_id": "CO.Kemp.VirtualService:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_lb_network",
+      "lookup": [],
+      "values": {
+        "name": "CO.Kemp.LoadMaster:::hostname",
+        "serial_number": "CO.Kemp.LoadMaster:::serialnumber",
+        "correlation_id": "CO.Kemp.LoadMaster:ObjectId"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplication:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::ApplicationId",
+        "service_classification": "Application Service"
+      }
+    },
+    {
+      "className": "cmdb_ci_service_discovered",
+      "lookup": [],
+      "values": {
+        "name": "EnterpriseApplicationGroup:::DisplayName",
+        "correlation_id": "EnterpriseApplicationGroup:::GroupId",
+        "service_classification": "Technical Service"
+      }
+}
+  ],
+  "relations": [
+    {
+      "type": "Runs on::Runs",
+      "parent": 0,
+      "child": 1
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 2,
+      "child": 3
+    },
+    {
+      "type": "Depends on::Used by",
+      "parent": 3,
+      "child": 0
+    }
+  ]
+}
