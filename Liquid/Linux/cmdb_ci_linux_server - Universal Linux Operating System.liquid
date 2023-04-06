@@ -9,9 +9,9 @@ You may need to take more care if there are desktop operating systems in scope.
   {%- assign os = 'Linux Ubuntu Server' -%}
 {% elseif os contains 'CentOs' -%}
   {%- assign os = 'CentOS Linux' -%}
-{% else %}
+{%- else -%}
   {%- assign os = 'GNU\Linux' -%}
-{% endif %}
+{%- endif -%}
 {
   "items": [
     {
