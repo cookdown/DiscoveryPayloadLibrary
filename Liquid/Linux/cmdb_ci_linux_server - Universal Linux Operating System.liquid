@@ -1,3 +1,17 @@
+{%- assign os = Microsoft-Linux-Universal-OperatingSystem_Microsoft-Unix-OperatingSystem_OSVersionDisplayName -%}
+{%- comment -%}
+ServiceNow likes santized operating system names.
+They will look at either uname -a or cat /etc/*release for its values by default.
+SCOM does this differently. However, you can use this section to match values.
+You may need to take more care if there are desktop operating systems in scope.
+{%- endcomment -%}
+{%- if os contains 'Ubuntu' -%}
+  {%- assign os = 'Linux Ubuntu Server' -%}
+{% elseif os contains 'CentOs' -%}
+  {%- assign os = 'CentOS Linux' -%}
+{% else %}
+  {%- assign os = 'GNU\Linux' -%}
+{% endif %}
 {
   "items": [
     {
@@ -10,7 +24,8 @@
         "dns_domain": "{{Microsoft-Unix-Computer_DNSName | regex_first_match: '(?<=\.)[\w-\.]+' }}",
         "fqdn": "{{Microsoft-Unix-Computer_DNSName}}",
         "ip_address": "{{Microsoft-Unix-Computer_IPAddress}}",
-        "os": "GNU/Linux",
+        "os": "{{ os }}",
+        "virtual": "{% if Microsoft-Unix-Computer_IsVirtualMachine == 'Virtual' %}true{% else %}false{% endif %}",
         "os_version": "{{Microsoft-Linux-Universal-OperatingSystem_Microsoft-Unix-OperatingSystem_OSVersionDisplayName}}",
         "short_description": "SSH Port: {{Microsoft-Unix-Computer_SSHPort}}",
         "name": "{{Microsoft-Unix-Computer_PrincipalName | regex_first_match: '[\w-]+' }}"
